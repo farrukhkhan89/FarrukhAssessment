@@ -1,0 +1,26 @@
+﻿@model IEnumerable<AssessmentMVC.Models.Appointment>
+@{
+    ViewBag.Title = "AppointmentList";
+}
+
+<h2>AppointmentList of @ViewBag.PractitionerName</h2>
+
+<table>
+    <tr>
+        <th>client_name</th>
+        <th>duration</th>
+        <th>appointment_type</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.client_name</td>
+            <td>@item.duration</td>
+            <td>@item.appointment_type</td>
+            
+            
+        </tr>
+    }
+</table>

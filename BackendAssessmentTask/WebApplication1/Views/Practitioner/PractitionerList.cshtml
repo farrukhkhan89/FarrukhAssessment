@@ -1,0 +1,29 @@
+﻿@model IEnumerable<AssessmentMVC.Models.PractitionerModel>
+@{
+    ViewBag.Title = "PractitionerList";
+}
+
+<h2>PractitionerList</h2>
+
+<table>
+    <tr>
+        <th>PractitionerId</th>
+        <th>Name</th>
+        <th>Cost</th>
+        <th>Revenue</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PractitionerId</td>
+            <td>@item.Name</td>
+            <td>@item.Cost</td>
+            <td>@item.Revenue</td>
+            <td>
+                <a href="@Url.Action("AppointmentList","Practitioner",new { practitionerId=@item.PractitionerId,name=item.Name})" class="btn btn-success">View</a>
+            </td>
+        </tr>
+    }
+</table>
